@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { initConfig } from "@joyid/ckb";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+initConfig({
+  name: "JoyID demo",
+  logo: "https://fav.farm/🆔",
+  joyidAppURL: "https://testnet.joyid.dev",
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

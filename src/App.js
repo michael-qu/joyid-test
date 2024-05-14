@@ -1,23 +1,21 @@
 import logo from './logo.svg';
+import { connect } from '@joyid/ckb';
 import './App.css';
 
 function App() {
+  const onConnect = async () => {
+    try {
+      const authData = await connect();
+      console.log(`JoyID user info:`, authData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Hello JoyID!</h1>
+      <button onClick={onConnect}>Connect JoyID</button>
     </div>
   );
 }
